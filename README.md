@@ -1,34 +1,22 @@
-# Ubuntu Server Cleanup Script
+# 🧹 Final Full Cleanup Script for Ubuntu Servers
 
-A one-command bash script to free up disk space on Ubuntu servers by cleaning:
+This script helps clean up Ubuntu servers — especially minimal setups with limited storage (like 10GB) — by reclaiming disk space from:
 
-- Unused Docker containers, images, and volumes
-- Docker build cache
-- Systemd journal logs
-- Large log files in `/var/log`
-- Unused `.zip`, `.tar`, `.gz`, `.log`, and `.bak` files over 10MB
-- APT package cache and unused packages
+- Unused Docker containers, images, volumes, and build cache
+- Old journal logs
+- Large log files in `/var/log` and `/var/logs`
+- Archived and backup files (`.zip`, `.tar`, `.gz`, `.log`, `.bak`) over 10MB
+- APT cache and unused packages
 - (Optional) Old Snap package revisions
 - Large Docker container logs
 
-Perfect for minimal servers running Docker on limited storage (e.g. 10GB).
+📁 Repo: [chainvpn/Final-Full-Cleanup-Script](https://github.com/chainvpn/Final-Full-Cleanup-Script)
 
 ---
 
-## 💡 Features
+## ⚡ Quick Usage (Inline)
 
-- Safe cleanup using `docker system prune`, `apt autoremove`, and more
-- Deletes files intelligently based on size and type
-- Displays disk usage **before and after** cleanup
-- Optional Snap package cleanup
-- Truncates Docker container log files without removing containers
-
----
-
-## 🛠️ Usage
-
-### 1. Clone this repository or download the script:
+You can run it directly on your server with:
 
 ```bash
-git clone https://github.com/your-username/ubuntu-cleanup-script.git
-cd ubuntu-cleanup-script
+curl -sSL https://raw.githubusercontent.com/chainvpn/Final-Full-Cleanup-Script/main/cleanup.sh | sudo bash
